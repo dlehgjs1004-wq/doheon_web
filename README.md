@@ -25,9 +25,9 @@ HTTP endpoint. The browser never connects to Ollama directly.
    private Ollama-compatible service URL. Do not expose Ollama without
    authentication/network controls.
 3. Render provisions PostgreSQL and generates `SESSION_SECRET`. Keep both
-   values private. The blueprint mounts a persistent disk at `/var/data` for
-   uploads; use a paid web instance (as configured) or change uploads to
-   object storage before using a free instance.
+   values private. The free blueprint stores uploads temporarily under `/tmp`;
+   uploaded files can disappear when the service restarts. Use object storage
+   or a paid persistent disk when durable file storage is required.
 4. Set `SECURE_COOKIES=true` only when serving through HTTPS (Render's proxy
    normally makes this automatic based on the request scheme).
 
