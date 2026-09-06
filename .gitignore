@@ -2,3 +2,5 @@ platform.sqlite3
 platform.sqlite3-shm
 platform.sqlite3-wal
 __pycache__/
+
+.vscode/
